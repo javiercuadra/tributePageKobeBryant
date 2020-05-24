@@ -60,11 +60,21 @@
   font-family: "Roboto Slab", serif;
   line-height: 1.5;
 }
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+body::-webkit-scrollbar-track {
+  background-color: var(--lakers-black);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--lakers-gold);
+}
 
 body {
   min-height: 100vh;
   width: 100vw;
   margin: auto;
+  overflow-x: hidden;
 }
 
 address {
@@ -109,15 +119,16 @@ strong {
 }
 
 .header__main-heading {
-  font-size: 3rem;
+  font-size: 5rem;
   margin-top: 0;
 }
 .header__subheading--lifespan {
   margin-bottom: 0rem;
+  font-size: 3rem;
 }
 
 .header__subheading {
-  font-size: 1.25rem;
+  font-size: 2rem;
 }
 
 .main-content__intro {
@@ -128,6 +139,12 @@ strong {
   justify-content: center;
   align-items: center;
   position: relative;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.3)
+  );
+  color: white;
 }
 
 .main-content__intro::before {
@@ -148,7 +165,7 @@ strong {
   border-radius: 50%;
   background-color: var(--lakers-gold-transparent);
   position: absolute;
-  transform: rotate(45deg) scale(5, 5) translate(40%, -80%);
+  transform: rotate(45deg) scale(4, 4) translate(40%, -80%);
   z-index: 0;
   overflow: hidden;
 }
@@ -166,7 +183,7 @@ strong {
   background-color: var(--lakers-purple-transparent);
   position: absolute;
   transform: rotate(45deg) scale(2, 2) translate(40%, 0%);
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
 }
 
@@ -213,9 +230,8 @@ strong {
 }
 
 .main-content__timeline-section {
-  width: 90%;
-  margin: auto;
   min-height: 90vh;
+  position: relative;
 }
 
 .main-content__timeline-heading {
@@ -224,12 +240,171 @@ strong {
 }
 
 .main-content__timeline {
-  margin-left: 20px;
-  margin-bottom: 5rem;
+  padding: 0;
+  margin-bottom: 0;
 }
 
-.timeline__items {
-  margin: 1rem 0;
+.timeline__item {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  transition: background-image 0.2s ease-in-out;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  border-top: 10px solid var(--lakers-gold);
+  border-bottom: 10px solid vvar(--lakers-gold);
+  z-index: ;
+}
+
+.timeline__item--1 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    url(./assets/philly.jpeg);
+}
+
+.timeline__item--2 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    url(./assets/nbaDraft.jpg);
+}
+
+.timeline__item--3 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    url(./assets/allstar.jpg);
+}
+
+.timeline__item--4 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    url(./assets/jazz.jpg);
+}
+
+.timeline__item--5 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    url(./assets/championship.jpg);
+}
+
+.timeline__item--6 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    url(./assets/all-nba.jpg);
+}
+
+.timeline__item--7 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    url(./assets/arrest.jpg);
+}
+
+.timeline__item--8 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    url(./assets/raptors.jpg);
+}
+
+.timeline__item--9 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    url(./assets/mvp.jpg);
+}
+
+.timeline__item--10 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    url(./assets/finals.jpg);
+}
+
+.timeline__item--11 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    url(./assets/retire.jpg);
+}
+
+.timeline__item--12 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    url(./assets/death.jpeg);
+}
+
+.timeline__stem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 3rem;
+}
+.timeline__stem-segment--first,
+.timeline__stem-segment--last {
+  background-color: transparent;
+}
+
+.timeline__stem-segment {
+  width: 3px;
+  height: 50vh;
+  background-color: var(--lakers-purple);
+  z-index: 0;
+}
+
+.timeline__stem-segment--first,
+.timeline__stem-segment--last {
+  background-color: transparent;
+}
+.timeline__date {
+  margin: 1vh 0;
+}
+
+.timeline__event {
+  width: 50ch;
+}
+
+.timeline__content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
 }
 
 .footer {
@@ -239,7 +414,7 @@ strong {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 20vh;
+  height: 40vh;
 }
 
 .footer__link-text {
