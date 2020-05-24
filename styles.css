@@ -1,0 +1,247 @@
+/* prettier-ignore */
+/*************************************************  
+    Kobe Bryant Tribute Page
+    Last Modified: May 23, 2020
+    Author: Javier F Cuadra
+    Email: javiercuadra2020u.northwestern.edu
+*************************************************/
+
+@-webkit-keyframes unblur {
+  0%,
+  50% {
+    opacity: 0;
+    -moz-filter: blur(30px);
+    -ms-filter: blur(30px);
+    -o-filter: blur(30px);
+    -webkit-filter: blur(30px);
+    filter: blur(30px);
+  }
+  100% {
+    opacity: 1;
+    -moz-filter: blur(0);
+    -ms-filter: blur(0);
+    -o-filter: blur(0);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+@keyframes unblur {
+  0%,
+  50% {
+    opacity: 0;
+    -moz-filter: blur(30px);
+    -ms-filter: blur(30px);
+    -o-filter: blur(30px);
+    -webkit-filter: blur(30px);
+    filter: blur(30px);
+  }
+  100% {
+    opacity: 1;
+    -moz-filter: blur(0);
+    -ms-filter: blur(0);
+    -o-filter: blur(0);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --lakers-purple: #552583;
+  --lakers-purple-light: hsl(271, 56%, 53%);
+  --lakers-purple-transparent: #5525834d;
+  --lakers-gold: #fdb927;
+  --lakers-gold-transparent: #fdb9274d;
+  --lakers-black: #000000;
+  font-size: 16px;
+  font-family: "Roboto Slab", serif;
+  line-height: 1.5;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  margin: auto;
+}
+
+address {
+  display: inline;
+}
+
+strong {
+  font-variation-settings: "wght" 900;
+  font-size: 1.01rem;
+  text-decoration: underline;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("./assets/kobe-jersey.jpeg");
+  background-attachment: fixed;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.header__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-animation: 1.5s unblur ease;
+  animation: 1.5s unblur ease;
+}
+
+.header__main-heading,
+.header__subheading,
+.header__subheading--lifespan {
+  color: var(--lakers-gold);
+}
+
+.header__main-heading {
+  font-size: 3rem;
+  margin-top: 0;
+}
+.header__subheading--lifespan {
+  margin-bottom: 0rem;
+}
+
+.header__subheading {
+  font-size: 1.25rem;
+}
+
+.main-content__intro {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.main-content__intro::before {
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--lakers-gold-transparent);
+  position: absolute;
+  transform: rotate(45deg) scale(3, 7) translate(-120%, 50%);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.main-content__intro::after {
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: var(--lakers-gold-transparent);
+  position: absolute;
+  transform: rotate(45deg) scale(5, 5) translate(40%, -80%);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.intro__intro-heading {
+  font-size: 2.5rem;
+  z-index: 2;
+}
+
+.intro__intro-heading::before {
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: var(--lakers-purple-transparent);
+  position: absolute;
+  transform: rotate(45deg) scale(2, 2) translate(40%, 0%);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.intro__intro-heading::after {
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--lakers-purple-transparent);
+  position: absolute;
+  transform: rotate(145deg) scale(2, 3.5) translate(100%, -110%);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.intro__intro-text {
+  width: 80ch;
+  font-size: 1.3rem;
+  z-index: 2;
+}
+
+.intro__intro-text:last-child {
+  margin-bottom: 2rem;
+}
+
+.intro__accolade-list {
+  align-self: flex-start;
+  margin-left: 20%;
+  z-index: 2;
+}
+
+.accolade-list__accolade {
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
+.main-content__image {
+  background-image: url(./assets/kobe.jpg);
+  height: 75vh;
+  width: 100vw;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.main-content__timeline-section {
+  width: 90%;
+  margin: auto;
+  min-height: 90vh;
+}
+
+.main-content__timeline-heading {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.main-content__timeline {
+  margin-left: 20px;
+  margin-bottom: 5rem;
+}
+
+.timeline__items {
+  margin: 1rem 0;
+}
+
+.footer {
+  background-color: var(--lakers-black);
+  color: var(--lakers-gold);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+.footer__link-text {
+  color: var(--lakers-purple-light);
+}
