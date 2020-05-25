@@ -50,8 +50,8 @@
 }
 
 :root {
-  --lakers-purple: #552583;
-  --lakers-purple-light: hsl(271, 56%, 53%);
+  --lakers-purple: rgb(85, 37, 131);
+  --lakers-purple-light: #8944ca;
   --lakers-purple-transparent: #5525834d;
   --lakers-gold: #fdb927;
   --lakers-gold-transparent: #fdb9274d;
@@ -75,6 +75,7 @@ body {
   width: 100vw;
   margin: auto;
   overflow-x: hidden;
+  cursor: default;
 }
 
 address {
@@ -249,6 +250,7 @@ strong {
   list-style: none;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   transition: background-image 0.2s ease-in-out;
   color: white;
   height: 100vh;
@@ -259,7 +261,6 @@ strong {
   background-attachment: fixed;
   border-top: 10px solid var(--lakers-gold);
   border-bottom: 10px solid vvar(--lakers-gold);
-  z-index: ;
 }
 
 .timeline__item--1 {
@@ -374,8 +375,10 @@ strong {
   position: relative;
   display: flex;
   align-items: center;
+  justify-self: center;
   flex-direction: column;
   margin-left: 3rem;
+  width: 1rem;
 }
 .timeline__stem-segment--first,
 .timeline__stem-segment--last {
@@ -387,14 +390,23 @@ strong {
   height: 50vh;
   background-color: var(--lakers-purple);
   z-index: 0;
+  transition: background-color 1s;
 }
 
-.timeline__stem-segment--first,
-.timeline__stem-segment--last {
-  background-color: transparent;
+.timeline__stem-segment.animate {
+  background-color: var(--lakers-gold);
 }
+
 .timeline__date {
   margin: 1vh 0;
+}
+
+.timeline__item--1 .timeline__date {
+  margin-top: 48vh;
+}
+
+.timeline__item--12 .timeline__date {
+  margin-bottom: 48vh;
 }
 
 .timeline__event {
